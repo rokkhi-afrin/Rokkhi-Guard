@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:guard_app/customclass/button.dart';
 import 'package:guard_app/customclass/dropdown_button.dart';
 import 'package:guard_app/customclass/rounder_corner_textfield.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               Container(
                 padding: EdgeInsets.only(bottom: 5),
-                height: 250,
+                height: 70,
 
 
 
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
                // color: Colors.amber[100],
                 child: Dropdown_button(),
               ),
+              SizedBox(height: 10),
               Container(
                 //height: 50,
                 padding: EdgeInsets.only(
@@ -51,16 +53,104 @@ class MyApp extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Container(
-                          //test
-
                           child: RounderCornerTextField()
                       ),
-
                     ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                          child: RounderCornerTextField()
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                          child: RounderCornerTextField()
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                          child: RounderCornerTextField()
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Container(
+                          child: RounderCornerTextField()
+                      ),
+                    ),
+
 
                   ],
                 ),
               ),
+              SizedBox(height: 10),
+
+
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Circular_button("1")
+                  ),
+                  Expanded(
+                      child: Circular_button("2")
+                  ),
+                  Expanded(
+                      child: Circular_button("3")
+                  ),
+                ],
+              ),
+
+                SizedBox(height: 10),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Circular_button("4")
+                  ),
+                  Expanded(
+                      child: Circular_button("5")
+                  ),
+                  Expanded(
+                      child: Circular_button("6")
+                  ),
+                ],
+              ),
+             SizedBox(height: 10),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Circular_button("7")
+                  ),
+                  Expanded(
+                      child: Circular_button("8")
+                  ),
+                  Expanded(
+                      child: Circular_button("9")
+                  ),
+                ],
+              ),
+               SizedBox(height: 10),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Circular_button("C")
+                  ),
+                  Expanded(
+                      child: Circular_button("0")
+                  ),
+                  Expanded(
+                      child: Circular_button("X")
+                  ),
+                ],
+              ),
+
+
+
+
+
+
+
             ],
           ),
         ),

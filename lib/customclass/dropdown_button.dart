@@ -12,9 +12,9 @@ class _Dropdown_buttonState extends State<Dropdown_button> {
   Widget build(BuildContext context) {
     return  DropdownButton<String>(
       value: dropdownValue,
-      icon: Icon(Icons.arrow_drop_down_circle),
-      iconSize: 24,
-      elevation: 16,
+//      icon: Icon(Icons.arrow_drop_down_circle),
+//      iconSize: 24,
+//      elevation: 16,
       style: TextStyle(
           color: Colors.green
       ),

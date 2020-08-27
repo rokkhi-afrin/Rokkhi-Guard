@@ -12,7 +12,7 @@ class RounderCornerTextField extends StatelessWidget {
           ),
           filled: true,
           hintStyle: new TextStyle(color: Colors.grey[800]),
-          hintText: "Type in your text",
+          hintText: "",
           fillColor: Colors.white70),
     );
   }
