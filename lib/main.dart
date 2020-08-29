@@ -3,11 +3,17 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:guard_app/activities/settings.dart';
 import 'package:guard_app/customclass/button.dart';
 import 'package:guard_app/customclass/dropdown_button.dart';
 import 'package:guard_app/customclass/rounder_corner_textfield.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: MyApp(),
+  ));
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -17,6 +23,14 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
+          leading: IconButton(
+            icon: Icon(Icons.settings),
+            highlightColor: Colors.pink,
+            onPressed: (){Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => test()),
+            );},
+          ),
         ),
         body: Center(
           child: ListView(
