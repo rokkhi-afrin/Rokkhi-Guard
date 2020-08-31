@@ -3,9 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
-import 'file:///Users/rokkhi/AndroidStudioProjects/guard_app/lib/activities/notifications.dart';
-import 'file:///Users/rokkhi/AndroidStudioProjects/guard_app/lib/customclass/text.dart';
+import 'file:///Users/rokkhi/AndroidStudioProjects/guard_app/lib/customclass/text_and_icon.dart';
+import 'package:guard_app/activities/notifications.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,6 +17,7 @@ class test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Welcome to Flutter',
       home: Scaffold(
         appBar: AppBar(
@@ -37,6 +37,7 @@ class test extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
+
               SizedBox(height: 80),
 
 
@@ -47,12 +48,14 @@ class test extends StatelessWidget {
                 padding:  EdgeInsets.only(left: 50,right:50),
                 child: RaisedButton(
 
+                  // Within the `FirstRoute` widget
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => notifications()),
+                      MaterialPageRoute(builder: (context) => Notifications()),
                     );
                   },
+
 
                   textColor: Colors.white,
 
@@ -66,7 +69,11 @@ class test extends StatelessWidget {
 
                 padding:  EdgeInsets.only(left: 50,right:50),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+
+
+                  },
                   textColor: Colors.white,
 
 //                  padding:  EdgeInsets.only(left: 50,right:50),
@@ -80,7 +87,7 @@ class test extends StatelessWidget {
 
                 padding:  EdgeInsets.only(left: 50,right:50),
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {_showMyDialog(context);},
                   textColor: Colors.white,
 
 //                  padding:  EdgeInsets.only(left: 50,right:50),
@@ -99,3 +106,30 @@ class test extends StatelessWidget {
   }
 }
 
+Future<void> _showMyDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('AlertDialog Title'),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text('This is a demo alert dialog.'),
+              Text('Would you like to approve of this message?'),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          FlatButton(
+            child: Text('Approve'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
+}

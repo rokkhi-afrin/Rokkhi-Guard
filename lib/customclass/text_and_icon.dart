@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class Customtext extends StatelessWidget {
+class Custom_text extends StatelessWidget {
   var text;
-
-  Customtext(this.text);
+  IconData icon;
+  Custom_text(this.text,this.icon);
 
 
   @override
@@ -14,7 +14,15 @@ class Customtext extends StatelessWidget {
         height: 70,
         child:Row(
           children: <Widget>[
+            Expanded(
+              flex: 1,
+              child:Icon(
+                icon,
+                color: Colors.pink,
+                size: 24.0,
 
+              ),
+            ),
 
             Expanded(
 
