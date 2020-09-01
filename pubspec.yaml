@@ -49,6 +49,7 @@ flutter:
     - assets/whitelist.png
     - assets/complainbox.png
     - assets/parking.png
+    - assets/logoo.png
 
 
   # The following line ensures that the Material Icons font is

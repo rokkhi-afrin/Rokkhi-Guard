@@ -3,15 +3,13 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'file:///Users/rokkhi/AndroidStudioProjects/guard_app/lib/customclass/text_and_icon.dart';
 import 'package:guard_app/activities/notifications.dart';
+import 'package:guard_app/customclass/button_icon.dart';
+import 'package:guard_app/customclass/rounder_corner_textfield.dart';
+import 'package:guard_app/customclass/text.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Navigation Basics',
-    home: test(),
-  ));
-}
 
 class test extends StatelessWidget {
   @override
@@ -38,32 +36,41 @@ class test extends StatelessWidget {
                 ),
               ),
 
+
               SizedBox(height: 80),
 
 
 
-              Container(
 
 
-                padding:  EdgeInsets.only(left: 50,right:50),
-                child: RaisedButton(
+                  Column(
 
-                  // Within the `FirstRoute` widget
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Notifications()),
-                    );
-                  },
+                    children: [
+                      Container(
 
 
-                  textColor: Colors.white,
+                        padding:  EdgeInsets.only(left: 50,right:50),
+                        child: RaisedButton(
+
+                          // Within the `FirstRoute` widget
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Notifications()),
+                            );
+                          },
+
+
+                          textColor: Colors.white,
 
 //                  padding:  EdgeInsets.only(left: 50,right:50),
-                  child: Custom_text("সাধারণ",Icons.circle),
-                ),
+                          child: Custom_text("সাধারণ",Icons.circle),
+                        ),
 
-              ),
+                      ),
+
+
+
               SizedBox(height: 20),
               Container(
 
@@ -89,12 +96,11 @@ class test extends StatelessWidget {
                 child: RaisedButton(
                   onPressed: () {_showMyDialog(context);},
                   textColor: Colors.white,
-
-//                  padding:  EdgeInsets.only(left: 50,right:50),
                   child: Custom_text("অ্যাপ এ কোন  সমস্যা পেলে ",Icons.help_center),
                 ),
 
-              ),
+              ),  ],
+                  ),
 
 
 
@@ -112,22 +118,38 @@ Future<void> _showMyDialog(BuildContext context) async {
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('AlertDialog Title'),
+
+        title: Customtext("Submit your report here(এখানে অভিযোগ করুন )"),
         content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[
-              Text('This is a demo alert dialog.'),
-              Text('Would you like to approve of this message?'),
+              Container(
+                height: 50,
+                color: Colors.amber[500],
+                child: RounderCornerTextField("Report title(শিরোনাম)"),
+              ),
+              Container(
+                height: 50,
+                color: Colors.amber[500],
+                child: RounderCornerTextField("Report details(বিস্তারিত)"),
+              ),
+
+
+
+
+
+
+
             ],
           ),
         ),
         actions: <Widget>[
-          FlatButton(
-            child: Text('Approve'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
+//          FlatButton(
+//            child:
+//            onPressed: () {
+//              Navigator.of(context).pop();
+//            },
+//          ),
         ],
       );
     },

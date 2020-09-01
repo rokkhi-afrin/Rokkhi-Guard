@@ -4,10 +4,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:guard_app/activities/settings.dart';
-import 'package:guard_app/customclass/button.dart';
-import 'package:guard_app/customclass/button_icon';
+import 'package:guard_app/customclass/circuar_button.dart';
 import 'package:guard_app/customclass/button_icon.dart';
 import 'package:guard_app/customclass/dropdown_button.dart';
+import 'package:guard_app/customclass/image.dart';
 import 'package:guard_app/customclass/text.dart';
 import 'package:guard_app/customclass/text_img.dart';
 
@@ -16,14 +16,29 @@ import 'package:guard_app/customclass/text_img.dart';
 class home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+
+          backgroundColor: Colors.white,
+          title:  Container(
+            padding: EdgeInsets.only(bottom: 5),
+            height: 70,
+            child: Container(
+
+              padding: EdgeInsets.fromLTRB(10,3,3,3),
+              height: 150,
+              width: 200,
+
+              child:  Imagee('assets/logoo.png'),
+
+            ),
+
+
+          ),
           leading: IconButton(
+            color: Colors.red,
             icon: Icon(Icons.settings),
-            highlightColor: Colors.pink,
+            highlightColor: Colors.blue,
             onPressed: () {
 
               Navigator.push(
@@ -33,24 +48,19 @@ class home extends StatelessWidget {
             },
           ),
         ),
+
+
         body: Center(
           child: ListView(
             children: [
-              Container(
-                padding: EdgeInsets.only(bottom: 5),
-                height: 70,
-                child: Image.network(
-                  'https://picsum.photos/2250?image=9',
-                  fit: BoxFit.cover,
-                ),
-              ),
-
+              SizedBox(height: 20),
               Container(
                 //height: 50,
                 padding: EdgeInsets.only(left: 50, right: 50),
                 // color: Colors.amber[100],
                 child: Dropdown_button(),
               ),
+              SizedBox(height: 20),
 
              Container(
                height: 110,
@@ -62,19 +72,20 @@ class home extends StatelessWidget {
                   ],
                 ),
              ),
+              SizedBox(height: 10),
               Container(
                 height: 110,
                 child: Row(
                   children: <Widget>[
 
                     Expanded(child:  Text_img("নোটিশ বোর্ড ","assets/noticebo.png")),
-
                     Expanded(child:  Text_img("পার্সেল/চিঠি","assets/parcel.png")),
                     Expanded(child:  Button_icon("প্রোফাইল",Icons.people_rounded)),
 
                   ],
                 ),
               ),
+              SizedBox(height: 10),
               Container(
                 height: 110,
                 child: Row(
@@ -88,7 +99,9 @@ class home extends StatelessWidget {
 
                   ],
                 ),
-              ),Container(
+              ),
+              SizedBox(height: 10),
+              Container(
                 height: 110,
                 child: Row(
                   children: <Widget>[
@@ -114,7 +127,7 @@ class home extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

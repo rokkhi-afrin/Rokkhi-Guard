@@ -7,11 +7,11 @@ class Circular_button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20),
+      padding: EdgeInsets.only(left: 0),
       child: ButtonTheme(
         height: 70,
         child: RaisedButton(
-          textColor: Colors.white,
+          textColor: Colors.black,
           color: Colors.white70,
           child: Text(text),
           onPressed: () {},
